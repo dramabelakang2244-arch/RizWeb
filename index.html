@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RizWeb — Jasa Pembuatan Website Profesional, Elegan & Terjangkau</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  html{scroll-behavior:smooth;background:#090d16;color:#f8fafc}
+  body{line-height:1.6;overflow-x:hidden}
+  a{text-decoration:none;color:inherit}
+  .container{max-width:1100px;margin:0 auto;padding:0 20px}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(245,158,11,.6)}70%{box-shadow:0 0 0 12px rgba(245,158,11,0)}100%{box-shadow:0 0 0 0 rgba(245,158,11,0)}}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:12px;font-weight:700;font-size:14px;transition:.25s;cursor:pointer;border:none}
+  .btn-gold{background:linear-gradient(135deg,#fbbf24,#d97706);color:#090d16;box-shadow:0 8px 20px -4px rgba(245,158,11,.4)}
+  .btn-gold:hover{transform:translateY(-3px);filter:brightness(1.08)}
+  .btn-pulse{animation:pulse 2s infinite}
+  .btn-dark{background:#161f33;color:#fff;border:1px solid #334155}
+  .btn-dark:hover{border-color:#f59e0b;transform:translateY(-3px)}
+  header{position:fixed;top:0;width:100%;background:rgba(9,13,22,.92);backdrop-filter:blur(10px);border-bottom:1px solid #1e293b;z-index:100}
+  .nav{display:flex;justify-content:space-between;align-items:center;height:72px}
+  .logo{font-size:24px;font-weight:900;color:#fff}.logo span{color:#f59e0b}
+  .menu{display:flex;gap:24px;font-size:14px;color:#cbd5e1}.menu a:hover{color:#f59e0b}
+  .hero{padding:145px 0 80px;text-align:center;background:radial-gradient(circle at top,rgba(245,158,11,.15),transparent 65%)}
+  .tag{display:inline-block;padding:6px 16px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);color:#fbbf24;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:20px}
+  .hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.2;max-width:780px;margin:0 auto 18px}.hero h1 span{color:#f59e0b}
+  .hero p{color:#94a3b8;max-width:600px;margin:0 auto 32px;font-size:16px}
+  .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:48px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:850px;margin:0 auto;background:#161f33;border:1px solid #1e293b;border-radius:18px;padding:22px}
+  .stats h4{font-size:24px;font-weight:800;color:#f59e0b}.stats p{font-size:12px;color:#94a3b8;margin:0}
+  section{padding:80px 0}.alt{background:#111827;border-top:1px solid #1e293b;border-bottom:1px solid #1e293b}
+  .title{text-align:center;max-width:600px;margin:0 auto 48px}
+  .title span{color:#f59e0b;font-size:12px;font-weight:800;letter-spacing:1px}
+  .title h2{font-size:30px;font-weight:800;margin:6px 0 10px}.title p{color:#94a3b8;font-size:15px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:#161f33;border:1px solid #1e293b;border-radius:18px;padding:28px;transition:.3s}
+  .card:hover{border-color:#f59e0b;transform:translateY(-4px)}
+  .card h3{font-size:18px;margin-bottom:8px}.card p{color:#94a3b8;font-size:14px}
+  .price-card{background:#161f33;border:1px solid #1e293b;border-radius:20px;padding:32px 26px;display:flex;flex-direction:column}
+  .price-card.pop{border:2px solid #f59e0b;position:relative}
+  .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#f59e0b;color:#090d16;font-size:11px;font-weight:800;padding:4px 14px;border-radius:20px}
+  .price{font-size:32px;font-weight:800;margin:14px 0}.price span{font-size:13px;color:#94a3b8;font-weight:400}
+  .list{list-style:none;margin:16px 0 28px;flex-grow:1}.list li{font-size:14px;color:#cbd5e1;margin-bottom:10px}.list li::before{content:"✓ ";color:#f59e0b;font-weight:700}
+  .price-card .btn{width:100%}
+  .faq{max-width:700px;margin:0 auto}
+  details{background:#161f33;border:1px solid #1e293b;border-radius:12px;padding:18px 22px;margin-bottom:12px}
+  summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
+  summary::after{content:"+";color:#f59e0b;font-size:18px}details[open] summary::after{content:"−"}
+  details p{margin-top:10px;color:#94a3b8;font-size:14px}
+  footer{text-align:center;padding:40px 20px;border-top:1px solid #1e293b;color:#64748b;font-size:13px}
+  .wa{position:fixed;bottom:22px;right:22px;background:#16a34a;color:#fff;padding:12px 20px;border-radius:50px;font-weight:700;font-size:14px;box-shadow:0 10px 25px rgba(22,163,74,.4);z-index:99}
+  @media(max-width:850px){.grid-3{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.menu{display:none}.hero-btns .btn{width:100%}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">⚡ Riz<span>Web.</span></a>
+    <nav class="menu">
+      <a href="#keunggulan">Keunggulan</a>
+      <a href="#paket">Paket Harga</a>
+      <a href="#portofolio">Portofolio</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="https://wa.me/6285749275680" target="_blank" class="btn btn-gold">💬 Chat Admin</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="tag">✨ PROMO WEBSITE TERIMA BERES</span>
+    <h1>Wujudkan Website Bisnis Elegan & Profesional Bersama <span>RizWeb.</span></h1>
+    <p>Tingkatkan kepercayaan pelanggan Anda. Desain modern, akses super cepat, gratis domain & SSL, serta responsif di semua layar.</p>
+    <div class="hero-btns">
+      <a href="#paket" class="btn btn-gold btn-pulse">🚀 Lihat Paket & Harga</a>
+      <a href="#portofolio" class="btn btn-dark">🎨 Lihat Contoh Desain</a>
+      <a href="https://wa.me/6285749275680" target="_blank" class="btn btn-dark">💬 Konsultasi Gratis</a>
+    </div>
+    <div class="stats">
+      <div><h4>150+</h4><p>Website Selesai</p></div>
+      <div><h4>99%</h4><p>Klien Puas</p></div>
+      <div><h4>2-5 Hari</h4><p>Proses Cepat</p></div>
+      <div><h4>24/7</h4><p>Support Teknis</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="keunggulan" class="alt">
+  <div class="container">
+    <div class="title">
+      <span>KEUNGGULAN KAMI</span>
+      <h2>Mengapa Memilih RizWeb?</h2>
+      <p>Kualitas desain premium dengan harga bersahabat untuk UMKM dan perusahaan.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card"><h3>⚡ Loading Super Cepat</h3><p>Kode ringan dan teroptimasi sehingga halaman terbuka instan di HP maupun laptop.</p></div>
+      <div class="card"><h3>📱 100% Mobile Friendly</h3><p>Tampilan otomatis menyesuaikan layar smartphone agar nyaman dibaca pengunjung.</p></div>
+      <div class="card"><h3>🎯 Fokus Order & Konversi</h3><p>Tombol WhatsApp strategis untuk mendorong calon pembeli segera menghubungi Anda.</p></div>
+      <div class="card"><h3>🔒 Gratis SSL Security</h3><p>Dilengkapi sertifikat keamanan HTTPS agar website dipercaya browser Google.</p></div>
+      <div class="card"><h3>🔍 Ramah SEO Google</h3><p>Struktur halaman dioptimalkan agar bisnis Anda mudah ditemukan di pencarian.</p></div>
+      <div class="card"><h3>🛠️ Terima Beres</h3><p>Cukup kirim materi usaha, tim RizWeb mengerjakan semuanya sampai website online.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="paket">
+  <div class="container">
+    <div class="title">
+      <span>PILIHAN PAKET</span>
+      <h2>Harga Transparan Tanpa Biaya Tersembunyi</h2>
+      <p>Pilih paket terbaik sesuai skala kebutuhan bisnis Anda.</p>
+    </div>
+    <div class="grid-3">
+      <div class="price-card">
+        <h3>Landing Page UMKM</h3>
+        <p style="color:#94a3b8;font-size:13px">Cocok untuk profil singkat & promosi produk.</p>
+        <div class="price">Rp 499rb <span>/ sekali bayar</span></div>
+        <ul class="list">
+          <li>1 Halaman Utama Desain Elegan</li>
+          <li>Gratis Domain .my.id / Subdomain</li>
+          <li>Desain 100% Mobile Friendly</li>
+          <li>Tombol Order Langsung WhatsApp</li>
+          <li>Selesai 2–3 Hari Kerja</li>
+        </ul>
+        <a href="https://wa.me/6285749275680" target="_blank" class="btn btn-dark">🛒 Pesan Paket UMKM</a>
+      </div>
+
+      <div class="price-card pop">
+        <span class="badge">⭐ PALING LARIS</span>
+        <h3 style="color:#fbbf24">Company Profile Pro</h3>
+        <p style="color:#94a3b8;font-size:13px">Untuk perusahaan, klinik, & bisnis berkembang.</p>
+        <div class="price">Rp 1.250rb <span>/ tahun pertama</span></div>
+        <ul class="list">
+          <li>Hingga 5 Halaman Lengkap</li>
+          <li>Gratis Domain .com (1 Tahun)</li>
+          <li>Hosting Cepat & SSL Security</li>
+          <li>Integrasi Google Maps & Form</li>
+          <li>Optimasi SEO Dasar Google</li>
+          <li>Gratis Revisi Desain 3x</li>
+        </ul>
+        <a href="https://wa.me/6285749275680" target="_blank" class="btn btn-gold btn-pulse">🔥 Pilih Paket Populer</a>
+      </div>
+
+      <div class="price-card">
+        <h3>Katalog & Toko Online</h3>
+        <p style="color:#94a3b8;font-size:13px">Untuk menampilkan banyak produk & order online.</p>
+        <div class="price">Rp 2.100rb <span>/ tahun pertama</span></div>
+        <ul class="list">
+          <li>Sistem Katalog & Keranjang</li>
+          <li>Gratis Domain .com / .id</li>
+          <li>Dashboard Admin Mudah</li>
+          <li>Checkout Otomatis WhatsApp</li>
+          <li>Panduan Kelola Website</li>
+        </ul>
+        <a href="https://wa.me/6285749275680" target="_blank" class="btn btn-dark">🛍️ Pesan Toko Online</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portofolio" class="alt">
+  <div class="container">
+    <div class="title">
+      <span>HASIL KARYA</span>
+      <h2>Inspirasi Desain RizWeb</h2>
+      <p>Desain modern yang siap disesuaikan dengan identitas brand Anda.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <span style="color:#f59e0b;font-size:12px;font-weight:700">COMPANY PROFILE</span>
+        <h3 style="margin-top:6px">Aura Estetika Clinic</h3>
+        <p style="margin-bottom:18px">Website klinik kecantikan dengan daftar layanan, profil dokter, dan tombol reservasi jadwal.</p>
+        <a href="https://wa.me/6285749275680" target="_blank" class="btn btn-dark" style="width:100%">✨ Buat Model Ini</a>
+      </div>
+      <div class="card">
+        <span style="color:#f59e0b;font-size:12px;font-weight:700">LANDING PAGE</span>
+        <h3 style="margin-top:6px">PT Karya Konstruksi</h3>
+        <p style="margin-bottom:18px">Website jasa kontraktor & arsitek lengkap dengan galeri proyek dan tombol survei lokasi.</p>
+        <a href="https://wa.me/6285749275680" target="_blank" class="btn btn-dark" style="width:100%">✨ Buat Model Ini</a>
+      </div>
+      <div class="card">
+        <span style="color:#f59e0b;font-size:12px;font-weight:700">KATALOG PRODUK</span>
+        <h3 style="margin-top:6px">Senja Artisan Coffee</h3>
+        <p style="margin-bottom:18px">Website katalog produk kuliner dan minuman dengan pilihan varian serta order cepat.</p>
+        <a href="https://wa.me/6285749275680" target="_blank" class="btn btn-dark" style="width:100%">✨ Buat Model Ini</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container faq">
+    <div class="title">
+      <span>TANYA JAWAB</span>
+      <h2>Pertanyaan Umum (FAQ)</h2>
+    </div>
+    <details open>
+      <summary>Apa saja materi yang perlu saya siapkan?</summary>
+      <p>Cukup siapkan nama usaha, logo (jika ada), deskripsi layanan/produk, foto pendukung, dan nomor WhatsApp aktif.</p>
+    </details>
+    <details>
+      <summary>Berapa lama proses pengerjaan website?</summary>
+      <p>Paket Landing Page selesai dalam 2–3 hari kerja. Paket Company Profile & Toko Online selesai dalam 4–7 hari kerja.</p>
+    </details>
+    <details>
+      <summary>Apakah ada biaya perpanjangan tahunan?</summary>
+      <p>Untuk domain berbayar (.com/.id) dan hosting, perpanjangan mulai Rp 350.000/tahun. Jika memakai hosting gratis GitHub Pages, cukup bayar biaya domain saja.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p style="color:#fff;font-weight:800;font-size:18px;margin-bottom:8px">⚡ Riz<span style="color:#f59e0b">Web.</span></p>
+    <p style="margin-bottom:14px">Partner Digitalisasi UMKM & Perusahaan Indonesia.</p>
+    <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:20px">
+      <a href="https://wa.me/6285749275680" target="_blank" class="btn btn-gold">💬 Hubungi WhatsApp</a>
+      <a href="#paket" class="btn btn-dark">⬆️ Kembali ke Atas</a>
+    </div>
+    <p>&copy; 2026 RizWeb Digital Studio. Hak Cipta Dilindungi.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/6285749275680?text=%20saya%20ingin%20konsultasi%20website" target="_blank" class="wa">💬 Tanya RizWeb</a>
+
+</body>
+</html>
+
